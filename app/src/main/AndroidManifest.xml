@@ -22,10 +22,10 @@
             android:name="applovin.sdk.key"
             android:value="4F9zxUam64Pf5zxH-gRzfPKqxP1TS9Ji2UaNAJC0vdsDP148x3Lgy1hTDCTqus07FiIX5pPzVyfTi6gwqtz0KB" />
 
-        <activity android:name=".FryingMeatInterstitialActivity" />
-        <activity android:name=".FryingVeggiesInterstitialActivity" />
-        <activity android:name=".OutOfTheFryingPanRewardedActivity" />
-        <activity android:name=".AndIntoTheFireRewardedActivity"></activity>
+        <activity android:name=".FryingMeatInterstitialActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".FryingVeggiesInterstitialActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".OutOfTheFryingPanRewardedActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AndIntoTheFireRewardedActivity" android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

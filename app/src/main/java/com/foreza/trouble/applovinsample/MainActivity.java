@@ -1,10 +1,12 @@
 package com.foreza.trouble.applovinsample;
 
+import android.content.Intent;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -86,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 String msg = "Banner adDisplayed for: " + ad.getZoneId();
                 Log.d(LOG_TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+
+                // TODO: When we come back this activity, do we have to call play() to resume the banner?
             }
 
             @Override
@@ -93,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 String msg = "Banner adHidden for: " + ad.getZoneId();
                 Log.d(LOG_TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+
+                // TODO: When we leave this activity, do we have to call pause() or even destroy the banner instance?
             }
         });
 
@@ -107,6 +113,27 @@ public class MainActivity extends AppCompatActivity {
 
         adView.loadNextAd();
 
+    }
+
+
+    // Launches an interstitial activity for frying meat
+    public void launchFryingMeatActivity(View view) {
+        startActivity(new Intent(this, FryingMeatInterstitialActivity.class));
+    }
+
+    // Launches an interstitial activity for frying veggies
+    public void launchFryingVeggiesActivity(View view) {
+        startActivity(new Intent(this, FryingVeggiesInterstitialActivity.class));
+    }
+
+    // Launches an rewarded activity for being thrown into the pan
+    public void launchOutOfThePanActivity(View view) {
+        startActivity(new Intent(this, OutOfTheFryingPanRewardedActivity.class));
+    }
+
+    // Launches an rewarded activity for being thrown into the fire
+    public void launchIntoTheFireActivity(View view) {
+        startActivity(new Intent(this, AndIntoTheFireRewardedActivity.class));
     }
 
 }
