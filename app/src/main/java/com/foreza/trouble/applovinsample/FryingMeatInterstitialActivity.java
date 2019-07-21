@@ -56,6 +56,7 @@ public class FryingMeatInterstitialActivity extends AppCompatActivity {
                         String msg = "Interstitial adReceived for: " + ad.getZoneId();
                         Log.d(LOG_TAG, msg);
                         Toast.makeText(FryingMeatInterstitialActivity.this, msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FryingMeatInterstitialActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
