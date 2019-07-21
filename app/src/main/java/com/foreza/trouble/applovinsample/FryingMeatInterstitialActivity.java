@@ -47,26 +47,26 @@ public class FryingMeatInterstitialActivity extends AppCompatActivity {
 
         AppLovinSdk.getInstance( this ).getAdService().loadNextAdForZoneId("81f14095db0fe841",
                 new AppLovinAdLoadListener()
-        {
-            @Override
-            public void adReceived(AppLovinAd ad)
-            {
-                loadedAd = ad;
-                interstitialAd.showAndRender(loadedAd);
-                String msg = "Interstitial adReceived for: " + ad.getZoneId();
-                Log.d(LOG_TAG, msg);
-                Toast.makeText(FryingMeatInterstitialActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
+                {
+                    @Override
+                    public void adReceived(AppLovinAd ad)
+                    {
+                        loadedAd = ad;
+                        interstitialAd.showAndRender(loadedAd);
+                        String msg = "Interstitial adReceived for: " + ad.getZoneId();
+                        Log.d(LOG_TAG, msg);
+                        Toast.makeText(FryingMeatInterstitialActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
 
-            @Override
-            public void failedToReceiveAd(int errorCode)
-            {
-                // Look at AppLovinErrorCodes.java for list of error codes.
-                String msg = "Interstitial failedToReceiveAd with error code : " + errorCode;
-                Log.d(LOG_TAG, msg);
-                Toast.makeText(FryingMeatInterstitialActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        } );
+                    @Override
+                    public void failedToReceiveAd(int errorCode)
+                    {
+                        // Look at AppLovinErrorCodes.java for list of error codes.
+                        String msg = "Interstitial failedToReceiveAd with error code : " + errorCode;
+                        Log.d(LOG_TAG, msg);
+                        Toast.makeText(FryingMeatInterstitialActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                } );
     }
 
     private void configureInterstitialAdDialog() {
@@ -125,3 +125,4 @@ public class FryingMeatInterstitialActivity extends AppCompatActivity {
 
 
 }
+
