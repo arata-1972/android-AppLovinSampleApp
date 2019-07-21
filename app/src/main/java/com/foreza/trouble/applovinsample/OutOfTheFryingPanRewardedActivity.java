@@ -38,6 +38,13 @@ public class OutOfTheFryingPanRewardedActivity extends AppCompatActivity {
         initializeAndLoadRewarded();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        myIncent.dismiss();     // TODO: Is this called automatically by the SDK?
+    }
+
+
     public void clickLoadRewarded(View view){
         initializeAndLoadRewarded();
     }
